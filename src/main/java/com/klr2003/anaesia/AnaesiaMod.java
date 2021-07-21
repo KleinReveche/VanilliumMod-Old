@@ -1,6 +1,7 @@
 package com.klr2003.anaesia;
 
 import com.klr2003.anaesia.utils.*;
+import com.klr2003.anaesia.utils.registry.AnaesiaRegistry;
 import net.fabricmc.api.ModInitializer;
 
 public class AnaesiaMod implements ModInitializer {
@@ -18,6 +19,6 @@ public class AnaesiaMod implements ModInitializer {
     public void onInitialize() {
         ConfigHandler.initConfig();
         if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled)){new Debug();}
-        Registry.register();
+        AnaesiaRegistry.register();
     }
 }
