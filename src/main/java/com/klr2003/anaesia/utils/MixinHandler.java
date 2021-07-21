@@ -9,6 +9,8 @@ import java.util.Set;
 
 public class MixinHandler implements IMixinConfigPlugin {
 
+    private boolean sentZeroTickMessage = false;
+    private boolean initConfig = false;
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
@@ -55,13 +57,33 @@ public class MixinHandler implements IMixinConfigPlugin {
                 return true;
             }
         }
+
+        if(mixinClassName.equals("com.klr2003.anaesia.enhancements.ice.EnhancedIceMixin")) {
+            if(ConfigHandler.readConfigBoolean(ConfigList.isEnhancedIceEnabled)) {
+                MessageHandler.infoMessage("Enhancing your Icy Experience..");
+                return true;
+            }
+        }
+        if(mixinClassName.contains("com.klr2003.anaesia.unpatches.zerotick")) {
+            if(ConfigHandler.readConfigBoolean(ConfigList.isZeroTickUnpatchEnabled)) {
+                if(!sentZeroTickMessage) {
+                    sentZeroTickMessage = true;
+                    MessageHandler.infoMessage("Reintroducing the Zero Tick Bug..");
+                }
+                if(mixinClassName.equals("com.klr2003.anaesia.unpatches.zerotick.ZeroTickAbstractPlantPartBlock"))
+                    return true;
+                if(mixinClassName.equals("com.klr2003.anaesia.unpatches.zerotick.ZeroTickAbstractPlantStemBlock"))
+                    return true;
+            }
+        }
         return false;
     }
 
     @Override
     public void onLoad(String mixinPackage) {
-        if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled))
-        MessageHandler.infoMessage("Injecting " + mixinPackage);
+        if(!initConfig) ConfigHandler.initConfig();
+        if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled)) MessageHandler.infoMessage("Injecting " + mixinPackage);
+
     }
 
     @Override
