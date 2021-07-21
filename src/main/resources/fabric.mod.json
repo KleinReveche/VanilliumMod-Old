@@ -24,15 +24,17 @@
     ]
   },
   "mixins": [
-    "mixins/slime_patch.mixins.json",
-    "mixins/fire_patch.mixins.json",
-    "mixins/enhanced_totem.mixins.json",
-    "mixins/enhanced_berries.mixins.json",
-    "mixins/enhanced_ice.mixins.json",
-    "mixins/protection_unpatch.mixins.json",
-    "mixins/fishing_unpatch.mixins.json",
-    "mixins/wither_roses_unpatch.mixins.json",
-    "mixins/zero_tick_unpatch.mixins.json"
+    "mixins/patches/slime_patch.mixins.json",
+    "mixins/enhancements/fire_patch.mixins.json",
+    "mixins/enhancements/enhanced_totem.mixins.json",
+    "mixins/enhancements/enhanced_berries.mixins.json",
+    "mixins/enhancements/enhanced_ice.mixins.json",
+    "mixins/enchantments/protection_unpatch.mixins.json",
+    "mixins/enchantments/infinity_patch.mixins.json",
+    "mixins/enchantments/damage_enchants_patch.mixins.json",
+    "mixins/unpatches/fishing_unpatch.mixins.json",
+    "mixins/unpatches/wither_roses_unpatch.mixins.json",
+    "mixins/unpatches/zero_tick_unpatch.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.7.4",
