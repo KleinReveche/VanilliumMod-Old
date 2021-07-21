@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.klr2003.anaesia.unpatches.zerotick",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "anaesia.refmap.json",
+  "plugin": "com.klr2003.anaesia.utils.MixinHandler",
+  "mixins": [
+    "ZeroTickAbstractPlantStemBlock",
+    "ZeroTickAbstractPlantPartBlock",
+    "ZeroTickBambooBlock",
+    "ZeroTickCactusBlock",
+    "ZeroTickChorusFlowerBlock",
+    "ZeroTickSugarCaneBlock"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

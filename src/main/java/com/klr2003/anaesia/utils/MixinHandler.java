@@ -57,7 +57,20 @@ public class MixinHandler implements IMixinConfigPlugin {
                 return true;
             }
         }
+        if(mixinClassName.equals("com.klr2003.anaesia.patches.infinity.InfinityPatchMixin")) {
+            if(ConfigHandler.readConfigBoolean(ConfigList.isInfinityPatchEnabled)) {
+                MessageHandler.infoMessage("Allowing Bows with Infinity and Mending..");
+                return true;
+            }
 
+        }
+        if(mixinClassName.equals("com.klr2003.anaesia.patches.damage.DamageEnchantmentPatchMixin")) {
+            if(ConfigHandler.readConfigBoolean(ConfigList.isDamageEnchantsPatchEnabled)) {
+                MessageHandler.infoMessage("Monsters Beware! preparing the Ultimate Damage..");
+                return true;
+            }
+
+        }
         if(mixinClassName.equals("com.klr2003.anaesia.enhancements.ice.EnhancedIceMixin")) {
             if(ConfigHandler.readConfigBoolean(ConfigList.isEnhancedIceEnabled)) {
                 MessageHandler.infoMessage("Enhancing your Icy Experience..");
