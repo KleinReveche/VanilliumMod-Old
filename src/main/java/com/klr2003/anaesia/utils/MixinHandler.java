@@ -12,8 +12,7 @@ public class MixinHandler implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if(mixinClassName.equals("com.klr2003.anaesia.enhancements.EnhancedTotemMixin")) {
-            MessageHandler.infoMessage("Checking config for " + mixinClassName);
+        if(mixinClassName.equals("com.klr2003.anaesia.enhancements.totem.EnhancedTotemMixin")) {
             if(ConfigHandler.readConfigBoolean(ConfigList.isEnhancedTotemEnabled)) {
                 MessageHandler.infoMessage("Patching EnhancedTotem");
                 return true;
@@ -25,6 +24,12 @@ public class MixinHandler implements IMixinConfigPlugin {
                 return true;
             }
 
+        }
+        if(mixinClassName.equals("com.klr2003.anaesia.patches.slime.SlimePatchMixin")) {
+            if(ConfigHandler.readConfigBoolean(ConfigList.isSlimeSuperFlatPatchEnabled)) {
+                MessageHandler.infoMessage("Patching Slimes");
+                return true;
+            }
         }
         return false;
     }
