@@ -20,26 +20,38 @@ public class MixinHandler implements IMixinConfigPlugin {
         }
         if(mixinClassName.equals("com.klr2003.anaesia.enhancements.berries.SweetBerryBushBlockMixin")) {
             if(ConfigHandler.readConfigBoolean(ConfigList.isEnhancedBerriesEnabled)) {
-                MessageHandler.infoMessage("Enhancing the Local Berries..");
+                MessageHandler.infoMessage("Fertilizing the Local Berries..");
                 return true;
             }
         }
         if(mixinClassName.equals("com.klr2003.anaesia.enhancements.burning.mixin.FirePatchMixin")) {
             if(ConfigHandler.readConfigBoolean(ConfigList.isEnhancedBurningEnabled)){
-                MessageHandler.infoMessage("Enhancing your Flint 'n Steel..");
+                MessageHandler.infoMessage("Making Mobs fear your Flint 'n Steel..");
                 return true;
             }
         }
         if(mixinClassName.equals("com.klr2003.anaesia.unpatches.protection.ProtectionUnpatchMixin")) {
             if(ConfigHandler.readConfigBoolean(ConfigList.isProtectionUnpatchEnabled)) {
-                MessageHandler.infoMessage("Unpatching Protection Restrictions..");
+                MessageHandler.infoMessage("Removing Protection Restrictions..");
                 return true;
             }
 
         }
+        if(mixinClassName.equals("com.klr2003.anaesia.unpatches.fishing.FishingUnpatchMixin")) {
+            if(ConfigHandler.readConfigBoolean(ConfigList.isFishingUnpatchEnabled)) {
+                MessageHandler.infoMessage("Returning Fishing to its old roots..");
+                return true;
+            }
+        }
+        if(mixinClassName.equals("com.klr2003.anaesia.unpatches.witherrose.EntityTypeMixin")) {
+            if(ConfigHandler.readConfigBoolean(ConfigList.isWitherRosesUnpatchEnabled)) {
+                MessageHandler.infoMessage("Reinvigorating Wither Roses..");
+                return true;
+            }
+        }
         if(mixinClassName.equals("com.klr2003.anaesia.patches.slime.SlimePatchMixin")) {
             if(ConfigHandler.readConfigBoolean(ConfigList.isSlimeSuperFlatPatchEnabled)) {
-                MessageHandler.infoMessage("Patching Slimes");
+                MessageHandler.infoMessage("Removing Slimes from Flat Worlds..");
                 return true;
             }
         }
