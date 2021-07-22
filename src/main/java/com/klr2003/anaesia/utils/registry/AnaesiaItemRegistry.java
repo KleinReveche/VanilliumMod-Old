@@ -53,6 +53,41 @@ public class AnaesiaItemRegistry {
     public static final Item DEEPSLATE_LAPIS_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_LAPIS_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item DEEPSLATE_REDSTONE_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_REDSTONE_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
+    public static final Item COPPER_BLOCK = new BlockItem(AnaesiaBlockRegistry.COPPER_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item EXPOSED_COPPER = new BlockItem(AnaesiaBlockRegistry.EXPOSED_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WEATHERED_COPPER = new BlockItem(AnaesiaBlockRegistry.WEATHERED_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item OXIDIZED_COPPER = new BlockItem(AnaesiaBlockRegistry.OXIDIZED_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item OXIDIZED_CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.OXIDIZED_CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WEATHERED_CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.WEATHERED_CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item EXPOSED_CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.EXPOSED_CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item OXIDIZED_CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.OXIDIZED_CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WEATHERED_CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.WEATHERED_CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item EXPOSED_CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.EXPOSED_CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item OXIDIZED_CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.OXIDIZED_CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WEATHERED_CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.WEATHERED_CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item EXPOSED_CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.EXPOSED_CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_COPPER_BLOCK = new BlockItem(AnaesiaBlockRegistry.WAXED_COPPER_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_WEATHERED_COPPER = new BlockItem(AnaesiaBlockRegistry.WAXED_WEATHERED_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_EXPOSED_COPPER = new BlockItem(AnaesiaBlockRegistry.WAXED_EXPOSED_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_OXIDIZED_COPPER = new BlockItem(AnaesiaBlockRegistry.WAXED_OXIDIZED_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_OXIDIZED_CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.WAXED_OXIDIZED_CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_WEATHERED_CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.WAXED_WEATHERED_CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_EXPOSED_CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.WAXED_EXPOSED_CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_CUT_COPPER = new BlockItem(AnaesiaBlockRegistry.WAXED_CUT_COPPER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_OXIDIZED_CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.WAXED_OXIDIZED_CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_WEATHERED_CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.WAXED_WEATHERED_CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_EXPOSED_CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.WAXED_EXPOSED_CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_CUT_COPPER_STAIRS = new BlockItem(AnaesiaBlockRegistry.WAXED_CUT_COPPER_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_OXIDIZED_CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.WAXED_OXIDIZED_CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_WEATHERED_CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.WAXED_WEATHERED_CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_EXPOSED_CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.WAXED_EXPOSED_CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item WAXED_CUT_COPPER_SLAB = new BlockItem(AnaesiaBlockRegistry.WAXED_CUT_COPPER_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+
+
+
     public static void registerItems(){
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_iron"), RAW_IRON);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_gold"), RAW_GOLD);
@@ -99,5 +134,39 @@ public class AnaesiaItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_redstone_ore"), DEEPSLATE_REDSTONE_ORE);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_emerald_ore"), DEEPSLATE_EMERALD_ORE);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_diamond_ore"), DEEPSLATE_DIAMOND_ORE);
+
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "copper_block"), COPPER_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_copper"), EXPOSED_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_copper"), WEATHERED_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_copper"), OXIDIZED_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "cut_copper"), CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_cut_copper"), EXPOSED_CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_cut_copper"), WEATHERED_CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_cut_copper"), OXIDIZED_CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "cut_copper_stairs"), CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_cut_copper_stairs"), EXPOSED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_cut_copper_stairs"), WEATHERED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_cut_copper_stairs"), OXIDIZED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "cut_copper_slab"), CUT_COPPER_SLAB);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_cut_copper_slab"), EXPOSED_CUT_COPPER_SLAB);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_cut_copper_slab"), WEATHERED_CUT_COPPER_SLAB);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_cut_copper_slab"), OXIDIZED_CUT_COPPER_SLAB);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_copper_block"), WAXED_COPPER_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_copper"), WAXED_EXPOSED_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_copper"), WAXED_WEATHERED_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_copper"), WAXED_OXIDIZED_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_cut_copper"), WAXED_CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_cut_copper"), WAXED_EXPOSED_CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_cut_copper"), WAXED_WEATHERED_CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_cut_copper"), WAXED_OXIDIZED_CUT_COPPER);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_cut_copper_stairs"), WAXED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_cut_copper_stairs"), WAXED_EXPOSED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_cut_copper_stairs"), WAXED_WEATHERED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_cut_copper_stairs"), WAXED_OXIDIZED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_cut_copper_slab"), WAXED_CUT_COPPER_SLAB);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_cut_copper_slab"), WAXED_EXPOSED_CUT_COPPER_SLAB);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_cut_copper_slab"), WAXED_WEATHERED_CUT_COPPER_SLAB);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_cut_copper_slab"), WAXED_OXIDIZED_CUT_COPPER_SLAB);
+
     }
 }

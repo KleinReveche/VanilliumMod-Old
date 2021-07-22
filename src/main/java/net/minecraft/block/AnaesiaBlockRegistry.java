@@ -1,8 +1,7 @@
 package net.minecraft.block;
 
 import com.klr2003.anaesia.AnaesiaMod;
-import com.klr2003.anaesia.blocks.MossBlock;
-import com.klr2003.anaesia.blocks.RotatedInfestedBlock;
+import com.klr2003.anaesia.blocks.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
@@ -51,6 +50,58 @@ public class AnaesiaBlockRegistry {
     public static final Block DEEPSLATE_LAPIS_ORE = new OreBlock(AbstractBlock.Settings.copy(Blocks.LAPIS_ORE).strength(4.5F, 3.0F).sounds(BlockSoundGroup.STONE));
     public static final Block DEEPSLATE_REDSTONE_ORE = new RedstoneOreBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_ORE).strength(4.5F, 3.0F).sounds(BlockSoundGroup.STONE));
 
+    /*
+    public static final Block COPPER_BLOCK = new OxidizableBlock(Oxidizable.OxidizationLevel.UNAFFECTED, AbstractBlock.Settings.of(Material.METAL, MapColor.ORANGE).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block EXPOSED_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.EXPOSED, AbstractBlock.Settings.of(Material.METAL, MapColor.TERRACOTTA_LIGHT_GRAY).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block WEATHERED_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.WEATHERED, AbstractBlock.Settings.of(Material.METAL, MapColor.field_25706).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block OXIDIZED_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.OXIDIZED, AbstractBlock.Settings.of(Material.METAL, MapColor.field_25705).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block OXIDIZED_CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.OXIDIZED, AbstractBlock.Settings.copy(OXIDIZED_COPPER));
+    public static final Block WEATHERED_CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.WEATHERED, AbstractBlock.Settings.copy(WEATHERED_COPPER));
+    public static final Block EXPOSED_CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.EXPOSED, AbstractBlock.Settings.copy(EXPOSED_COPPER));
+    public static final Block CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.UNAFFECTED, AbstractBlock.Settings.copy(COPPER_BLOCK));
+    public static final Block OXIDIZED_CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.OXIDIZED, OXIDIZED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(OXIDIZED_CUT_COPPER));
+    public static final Block WEATHERED_CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.WEATHERED, WEATHERED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(WEATHERED_COPPER));
+    public static final Block EXPOSED_CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.EXPOSED, EXPOSED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(EXPOSED_COPPER));
+    public static final Block CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.UNAFFECTED, CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(COPPER_BLOCK));
+    public static final Block OXIDIZED_CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.OXIDIZED, AbstractBlock.Settings.copy(OXIDIZED_CUT_COPPER).requiresTool());
+    public static final Block WEATHERED_CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.WEATHERED, AbstractBlock.Settings.copy(WEATHERED_CUT_COPPER).requiresTool());
+    public static final Block EXPOSED_CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.EXPOSED, AbstractBlock.Settings.copy(EXPOSED_CUT_COPPER).requiresTool());
+    public static final Block CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.UNAFFECTED, AbstractBlock.Settings.copy(CUT_COPPER).requiresTool());
+     */
+    public static final Block COPPER_BLOCK = new Block(AbstractBlock.Settings.of(Material.METAL, MapColor.ORANGE).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block EXPOSED_COPPER = new Block(AbstractBlock.Settings.of(Material.METAL, MapColor.TERRACOTTA_LIGHT_GRAY).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block WEATHERED_COPPER = new Block(AbstractBlock.Settings.of(Material.METAL, MapColor.field_25706).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block OXIDIZED_COPPER = new Block(AbstractBlock.Settings.of(Material.METAL, MapColor.field_25705).requiresTool().strength(3.0F, 6.0F).sounds(BlockSoundGroup.METAL));
+    public static final Block OXIDIZED_CUT_COPPER = new Block(AbstractBlock.Settings.copy(OXIDIZED_COPPER));
+    public static final Block WEATHERED_CUT_COPPER = new Block(AbstractBlock.Settings.copy(WEATHERED_COPPER));
+    public static final Block EXPOSED_CUT_COPPER = new Block(AbstractBlock.Settings.copy(EXPOSED_COPPER));
+    public static final Block CUT_COPPER = new Block(AbstractBlock.Settings.copy(COPPER_BLOCK));
+    public static final Block OXIDIZED_CUT_COPPER_STAIRS = new StairsBlock(OXIDIZED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(OXIDIZED_CUT_COPPER));
+    public static final Block WEATHERED_CUT_COPPER_STAIRS = new StairsBlock(WEATHERED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(WEATHERED_COPPER));
+    public static final Block EXPOSED_CUT_COPPER_STAIRS = new StairsBlock(EXPOSED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(EXPOSED_COPPER));
+    public static final Block CUT_COPPER_STAIRS = new StairsBlock(CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(COPPER_BLOCK));
+    public static final Block OXIDIZED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(OXIDIZED_CUT_COPPER).requiresTool());
+    public static final Block WEATHERED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WEATHERED_CUT_COPPER).requiresTool());
+    public static final Block EXPOSED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(EXPOSED_CUT_COPPER).requiresTool());
+    public static final Block CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(CUT_COPPER).requiresTool());
+
+    public static final Block WAXED_COPPER_BLOCK = new Block(AbstractBlock.Settings.copy(COPPER_BLOCK));
+    public static final Block WAXED_WEATHERED_COPPER = new Block(AbstractBlock.Settings.copy(WEATHERED_COPPER));
+    public static final Block WAXED_EXPOSED_COPPER = new Block(AbstractBlock.Settings.copy(EXPOSED_COPPER));
+    public static final Block WAXED_OXIDIZED_COPPER = new Block(AbstractBlock.Settings.copy(OXIDIZED_COPPER));
+    public static final Block WAXED_OXIDIZED_CUT_COPPER = new Block(AbstractBlock.Settings.copy(OXIDIZED_COPPER));
+    public static final Block WAXED_WEATHERED_CUT_COPPER = new Block(AbstractBlock.Settings.copy(WEATHERED_COPPER));
+    public static final Block WAXED_EXPOSED_CUT_COPPER = new Block(AbstractBlock.Settings.copy(EXPOSED_COPPER));
+    public static final Block WAXED_CUT_COPPER = new Block(AbstractBlock.Settings.copy(COPPER_BLOCK));
+    public static final Block WAXED_OXIDIZED_CUT_COPPER_STAIRS = new StairsBlock(WAXED_OXIDIZED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(OXIDIZED_COPPER));
+    public static final Block WAXED_WEATHERED_CUT_COPPER_STAIRS = new StairsBlock(WAXED_WEATHERED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(WEATHERED_COPPER));
+    public static final Block WAXED_EXPOSED_CUT_COPPER_STAIRS = new StairsBlock(WAXED_EXPOSED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(EXPOSED_COPPER));
+    public static final Block WAXED_CUT_COPPER_STAIRS = new StairsBlock(WAXED_CUT_COPPER.getDefaultState(), AbstractBlock.Settings.copy(COPPER_BLOCK));
+    public static final Block WAXED_OXIDIZED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WAXED_OXIDIZED_CUT_COPPER).requiresTool());
+    public static final Block WAXED_WEATHERED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WAXED_WEATHERED_CUT_COPPER).requiresTool());
+    public static final Block WAXED_EXPOSED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WAXED_EXPOSED_CUT_COPPER).requiresTool());
+    public static final Block WAXED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WAXED_CUT_COPPER).requiresTool());
+
 
     public static void registerBlocks(){
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_iron_block"), RAW_IRON_BLOCK);
@@ -94,6 +145,39 @@ public class AnaesiaBlockRegistry {
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_redstone_ore"), DEEPSLATE_REDSTONE_ORE);
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_emerald_ore"), DEEPSLATE_EMERALD_ORE);
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_diamond_ore"), DEEPSLATE_DIAMOND_ORE);
+
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "copper_block"), COPPER_BLOCK);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_copper"), EXPOSED_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_copper"), WEATHERED_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_copper"), OXIDIZED_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "cut_copper"), CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_cut_copper"), EXPOSED_CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_cut_copper"), WEATHERED_CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_cut_copper"), OXIDIZED_CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "cut_copper_stairs"), CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_cut_copper_stairs"), EXPOSED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_cut_copper_stairs"), WEATHERED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_cut_copper_stairs"), OXIDIZED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "cut_copper_slab"), CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "exposed_cut_copper_slab"), EXPOSED_CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "weathered_cut_copper_slab"), WEATHERED_CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "oxidized_cut_copper_slab"), OXIDIZED_CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_copper_block"), WAXED_COPPER_BLOCK);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_copper"), WAXED_EXPOSED_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_copper"), WAXED_WEATHERED_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_copper"), WAXED_OXIDIZED_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_cut_copper"), WAXED_CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_cut_copper"), WAXED_EXPOSED_CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_cut_copper"), WAXED_WEATHERED_CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_cut_copper"), WAXED_OXIDIZED_CUT_COPPER);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_cut_copper_stairs"), WAXED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_cut_copper_stairs"), WAXED_EXPOSED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_cut_copper_stairs"), WAXED_WEATHERED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_cut_copper_stairs"), WAXED_OXIDIZED_CUT_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_cut_copper_slab"), WAXED_CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_cut_copper_slab"), WAXED_EXPOSED_CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_cut_copper_slab"), WAXED_WEATHERED_CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_cut_copper_slab"), WAXED_OXIDIZED_CUT_COPPER_SLAB);
 
     }
 
