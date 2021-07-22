@@ -1,11 +1,13 @@
 package com.klr2003.anaesia.utils.registry;
 
+import net.minecraft.block.AnaesiaBlockRegistry;
+
 public class AnaesiaRegistry {
 
     public static void register(){
-        ItemRegistry.registerItems();
-        ItemRegistry.registerItemsFromBlock();
-        BlockRegistry.registerBlocks();
+        AnaesiaItemRegistry.registerItems();
+        AnaesiaItemRegistry.registerItemsFromBlock();
+        AnaesiaBlockRegistry.registerBlocks();
 
     }
 
