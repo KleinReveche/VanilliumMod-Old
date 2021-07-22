@@ -1,5 +1,6 @@
 package com.klr2003.anaesia.utils;
 
+import com.klr2003.anaesia.AnaesiaMod;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -11,6 +12,7 @@ public class MixinHandler implements IMixinConfigPlugin {
 
     private boolean sentZeroTickMessage = false;
     private boolean initConfig = false;
+    private boolean initMessage = false;
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
@@ -94,7 +96,13 @@ public class MixinHandler implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        if(!initConfig) ConfigHandler.initConfig();
+        if(!initMessage){
+            MessageHandler.infoMessage("Starting " + AnaesiaMod.MOD_NAME + " Mod v" + AnaesiaMod.VERSION);
+        }
+        if(!initConfig) {
+            ConfigHandler.initConfig();
+            initConfig = true;
+        }
         if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled)) MessageHandler.infoMessage("Injecting " + mixinPackage);
 
     }
