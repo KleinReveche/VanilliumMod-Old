@@ -98,6 +98,7 @@ public class MixinHandler implements IMixinConfigPlugin {
     public void onLoad(String mixinPackage) {
         if(!initMessage){
             MessageHandler.infoMessage("Starting " + AnaesiaMod.MOD_NAME + " Mod v" + AnaesiaMod.VERSION);
+            initMessage = true;
         }
         if(!initConfig) {
             ConfigHandler.initConfig();
