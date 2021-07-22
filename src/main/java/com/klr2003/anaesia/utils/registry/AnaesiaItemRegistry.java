@@ -13,6 +13,7 @@ public class AnaesiaItemRegistry {
 
     public static final Item RAW_IRON = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
     public static final Item RAW_GOLD = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
+    public static final Item RAW_COPPER = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
     public static final Item COPPER_INGOT = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
 
     public static final Item RAW_IRON_BLOCK = new BlockItem(AnaesiaBlockRegistry.RAW_IRON_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
@@ -48,15 +49,19 @@ public class AnaesiaItemRegistry {
     public static final Item DEEPSLATE_IRON_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_IRON_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item DEEPSLATE_COAL_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_COAL_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item DEEPSLATE_DIAMOND_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_DIAMOND_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item DEEPSLATE_COPPER_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_COPPER_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item DEEPSLATE_LAPIS_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_LAPIS_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final Item DEEPSLATE_REDSTONE_ORE = new BlockItem(AnaesiaBlockRegistry.DEEPSLATE_REDSTONE_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
     public static void registerItems(){
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_iron"), RAW_IRON);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_gold"), RAW_GOLD);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_copper"), RAW_COPPER);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "copper_ingot"), COPPER_INGOT);
 
     }
 
-    public static void registerItemsFromBlock(){
+    public static void registerItemsFromBlock() {
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_iron_block"), RAW_IRON_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_gold_block"), RAW_GOLD_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "smooth_basalt"), SMOOTH_BASALT);
@@ -86,10 +91,13 @@ public class AnaesiaItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "cracked_deepslate_bricks"), CRACKED_DEEPSLATE_BRICKS);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "cracked_deepslate_tiles"), CRACKED_DEEPSLATE_TILES);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "infested_deepslate"), INFESTED_DEEPSLATE);
-        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_emerald_ore"), DEEPSLATE_EMERALD_ORE);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_gold_ore"), DEEPSLATE_GOLD_ORE);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_iron_ore"), DEEPSLATE_IRON_ORE);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_coal_ore"), DEEPSLATE_COAL_ORE);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_copper_ore"), DEEPSLATE_COPPER_ORE);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_lapis_ore"), DEEPSLATE_LAPIS_ORE);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_redstone_ore"), DEEPSLATE_REDSTONE_ORE);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_emerald_ore"), DEEPSLATE_EMERALD_ORE);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "deepslate_diamond_ore"), DEEPSLATE_DIAMOND_ORE);
     }
 }
