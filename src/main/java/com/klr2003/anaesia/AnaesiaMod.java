@@ -1,14 +1,14 @@
 package com.klr2003.anaesia;
 
 import com.klr2003.anaesia.utils.*;
-import com.klr2003.anaesia.utils.registry.AnaesiaRegistry;
+import com.klr2003.anaesia.utils.AnaesiaRegistry;
 import net.fabricmc.api.ModInitializer;
 
 public class AnaesiaMod implements ModInitializer {
 
     public static final String MOD_ID = "anaesia";
     public static final String MOD_NAME = "Anaesia";
-    public static final String VERSION = "0.2.1";
+    public static final String VERSION = "0.3.1";
     public static final String MINECRAFT_ID = "minecraft";
 
 

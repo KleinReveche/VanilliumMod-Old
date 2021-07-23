@@ -17,6 +17,7 @@ public class ConfigList {
     public static String isInfinityPatchEnabled = "Infinity-Mending-Patch";
     public static String isDamageEnchantsPatchEnabled = "Damage-Enchantments-Patch-Enabled";
 
+    public static String isBackportEnabled = "1.17-Backport";
     public static String isDebugModeEnabled = "Debug-Mode";
     public static String configFileVersion = "Config-File-Version";
 
