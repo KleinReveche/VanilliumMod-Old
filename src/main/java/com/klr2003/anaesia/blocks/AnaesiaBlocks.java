@@ -1,13 +1,14 @@
-package net.minecraft.block;
+package com.klr2003.anaesia.blocks;
 
 import com.klr2003.anaesia.AnaesiaMod;
-import com.klr2003.anaesia.blocks.*;
+import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class AnaesiaBlockRegistry {
+public class AnaesiaBlocks {
 
     public static final Block RAW_IRON_BLOCK = new Block(AbstractBlock.Settings.of(Material.STONE, MapColor.CYAN).requiresTool().strength(5.0F, 6.0F));
     public static final Block RAW_GOLD_BLOCK = new Block(AbstractBlock.Settings.of(Material.STONE, MapColor.GOLD).requiresTool().strength(5.0F, 6.0F));
