@@ -18,7 +18,9 @@ public class AnaesiaMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ConfigHandler.initConfig();
-        if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled)){new Debug();}
-        AnaesiaRegistry.register();
+        if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled))
+            new Debug();
+        if(ConfigHandler.readConfigBoolean(ConfigList.isBackportEnabled))
+            AnaesiaRegistry.register();
     }
 }

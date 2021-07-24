@@ -33,7 +33,7 @@ public class ConfigHandler {
                 config.put(ConfigList.configFileVersion, "1");
                 config.put(ConfigList.isInfinityPatchEnabled, "false");
                 config.put(ConfigList.isDamageEnchantsPatchEnabled, "false");
-                config.put(ConfigList.isDamageEnchantsPatchEnabled, "false");
+                config.put(ConfigList.isBackportEnabled, "true");
 
                 // save properties to project root folder
                 config.store(output, AnaesiaMod.MOD_NAME + " Mod Configuration");
