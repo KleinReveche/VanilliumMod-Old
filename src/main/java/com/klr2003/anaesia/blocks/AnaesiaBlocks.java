@@ -110,11 +110,9 @@ public class AnaesiaBlocks{
     public static final Block AZALEA_LEAVES = createLeavesBlock();
     public static final Block FLOWERING_AZALEA = new FloweringAzaleaBlock(AbstractBlock.Settings.of(Material.PLANT).breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque());
     public static final Block FLOWERING_AZALEA_LEAVES = createLeavesBlock();
-
     public static final Block POTTED_AZALEA_BUSH = new FlowerPotBlock(AZALEA, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque());
     public static final Block POTTED_FLOWERING_AZALEA_BUSH = new FlowerPotBlock(FLOWERING_AZALEA, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque());
-
-
+    public static final Block TINTED_GLASS = new TintedGlassBlock(AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(AnaesiaBlocks::never).solidBlock(AnaesiaBlocks::never).suffocates(AnaesiaBlocks::never).blockVision(AnaesiaBlocks::never));
 
 
     public static void registerBlocks(){
@@ -198,6 +196,8 @@ public class AnaesiaBlocks{
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "flowering_azalea_leaves"), FLOWERING_AZALEA_LEAVES);
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_azalea_bush"), POTTED_AZALEA_BUSH);
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_flowering_azalea_bush"), POTTED_FLOWERING_AZALEA_BUSH);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "tinted_glass"), TINTED_GLASS);
+
 
         addFlammables();
     }
@@ -208,7 +208,7 @@ public class AnaesiaBlocks{
     }
 
     private static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {return false;}
-
+    private static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos, EntityType<?> entityType) {return false;}
     //private static Boolean always(BlockState blockState, BlockView blockView, BlockPos blockPos) {return true;}
 
     private static Boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {

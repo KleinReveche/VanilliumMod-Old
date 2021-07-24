@@ -15,6 +15,7 @@ public class AnaesiaItems {
     public static final Item RAW_GOLD = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
     public static final Item RAW_COPPER = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
     public static final Item COPPER_INGOT = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
+    public static final Item AMETHYST_SHARD = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
 
     private static final Item RAW_IRON_BLOCK = new BlockItem(AnaesiaBlocks.RAW_IRON_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
     private static final Item RAW_GOLD_BLOCK = new BlockItem(AnaesiaBlocks.RAW_GOLD_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
@@ -93,11 +94,14 @@ public class AnaesiaItems {
     private static final Item POTTED_AZALEA_BUSH = new BlockItem(AnaesiaBlocks.POTTED_AZALEA_BUSH, new FabricItemSettings().group(ItemGroup.DECORATIONS));
     private static final Item POTTED_FLOWERING_AZALEA_BUSH = new BlockItem(AnaesiaBlocks.POTTED_FLOWERING_AZALEA_BUSH, new FabricItemSettings().group(ItemGroup.DECORATIONS));
 
+    private static final Item TINTED_GLASS = new BlockItem(AnaesiaBlocks.TINTED_GLASS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+
     public static void registerItems(){
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_iron"), RAW_IRON);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_gold"), RAW_GOLD);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "raw_copper"), RAW_COPPER);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "copper_ingot"), COPPER_INGOT);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "amethyst_shard"), AMETHYST_SHARD);
 
     }
 
@@ -178,6 +182,7 @@ public class AnaesiaItems {
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "flowering_azalea_leaves"), FLOWERING_AZALEA_LEAVES);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_azalea_bush"), POTTED_AZALEA_BUSH);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_flowering_azalea_bush"), POTTED_FLOWERING_AZALEA_BUSH);
+        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "tinted_glass"), TINTED_GLASS);
 
     }
 }
