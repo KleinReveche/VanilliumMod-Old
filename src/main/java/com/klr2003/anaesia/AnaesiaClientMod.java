@@ -15,5 +15,7 @@ public class AnaesiaClientMod implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(AnaesiaBlocks.TINTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(AnaesiaBlocks.AZALEA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(AnaesiaBlocks.FLOWERING_AZALEA, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(AnaesiaBlocks.POTTED_AZALEA_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(AnaesiaBlocks.POTTED_FLOWERING_AZALEA_BUSH, RenderLayer.getCutout());
     }
 }

@@ -91,8 +91,6 @@ public class AnaesiaItems {
     private static final Item AZALEA_LEAVES = new BlockItem(AnaesiaBlocks.AZALEA_LEAVES, new FabricItemSettings().group(ItemGroup.DECORATIONS));
     private static final Item FLOWERING_AZALEA = new BlockItem(AnaesiaBlocks.FLOWERING_AZALEA, new FabricItemSettings().group(ItemGroup.DECORATIONS));
     private static final Item FLOWERING_AZALEA_LEAVES = new BlockItem(AnaesiaBlocks.FLOWERING_AZALEA_LEAVES, new FabricItemSettings().group(ItemGroup.DECORATIONS));
-    private static final Item POTTED_AZALEA_BUSH = new BlockItem(AnaesiaBlocks.POTTED_AZALEA_BUSH, new FabricItemSettings().group(ItemGroup.DECORATIONS));
-    private static final Item POTTED_FLOWERING_AZALEA_BUSH = new BlockItem(AnaesiaBlocks.POTTED_FLOWERING_AZALEA_BUSH, new FabricItemSettings().group(ItemGroup.DECORATIONS));
 
     private static final Item TINTED_GLASS = new BlockItem(AnaesiaBlocks.TINTED_GLASS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
@@ -180,8 +178,6 @@ public class AnaesiaItems {
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "azalea_leaves"), AZALEA_LEAVES);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "flowering_azalea"), FLOWERING_AZALEA);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "flowering_azalea_leaves"), FLOWERING_AZALEA_LEAVES);
-        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_azalea_bush"), POTTED_AZALEA_BUSH);
-        Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_flowering_azalea_bush"), POTTED_FLOWERING_AZALEA_BUSH);
         Registry.register(Registry.ITEM, new Identifier(AnaesiaMod.MINECRAFT_ID, "tinted_glass"), TINTED_GLASS);
 
     }
