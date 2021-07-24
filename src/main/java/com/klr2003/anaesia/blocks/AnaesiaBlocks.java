@@ -1,14 +1,18 @@
 package com.klr2003.anaesia.blocks;
 
 import com.klr2003.anaesia.AnaesiaMod;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.*;
+import net.minecraft.entity.EntityType;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.BlockView;
 
-public class AnaesiaBlocks {
+public class AnaesiaBlocks{
 
     public static final Block RAW_IRON_BLOCK = new Block(AbstractBlock.Settings.of(Material.STONE, MapColor.CYAN).requiresTool().strength(5.0F, 6.0F));
     public static final Block RAW_GOLD_BLOCK = new Block(AbstractBlock.Settings.of(Material.STONE, MapColor.GOLD).requiresTool().strength(5.0F, 6.0F));
@@ -102,6 +106,13 @@ public class AnaesiaBlocks {
     public static final Block WAXED_WEATHERED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WAXED_WEATHERED_CUT_COPPER).requiresTool());
     public static final Block WAXED_EXPOSED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WAXED_EXPOSED_CUT_COPPER).requiresTool());
     public static final Block WAXED_CUT_COPPER_SLAB = new SlabBlock(AbstractBlock.Settings.copy(WAXED_CUT_COPPER).requiresTool());
+    public static final Block AZALEA = new AzaleaBlock(AbstractBlock.Settings.of(Material.PLANT).breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static final Block AZALEA_LEAVES = createLeavesBlock();
+    public static final Block FLOWERING_AZALEA = new FloweringAzaleaBlock(AbstractBlock.Settings.of(Material.PLANT).breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static final Block FLOWERING_AZALEA_LEAVES = createLeavesBlock();
+    public static final Block POTTED_AZALEA_BUSH = new FlowerPotBlock(AZALEA, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque());
+    public static final Block POTTED_FLOWERING_AZALEA_BUSH = new FlowerPotBlock(FLOWERING_AZALEA, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque());
+    public static final Block TINTED_GLASS = new TintedGlassBlock(AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(AnaesiaBlocks::never).solidBlock(AnaesiaBlocks::never).suffocates(AnaesiaBlocks::never).blockVision(AnaesiaBlocks::never));
 
 
     public static void registerBlocks(){
@@ -179,7 +190,36 @@ public class AnaesiaBlocks {
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_exposed_cut_copper_slab"), WAXED_EXPOSED_CUT_COPPER_SLAB);
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_weathered_cut_copper_slab"), WAXED_WEATHERED_CUT_COPPER_SLAB);
         Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "waxed_oxidized_cut_copper_slab"), WAXED_OXIDIZED_CUT_COPPER_SLAB);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "azalea"), AZALEA);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "azalea_leaves"), AZALEA_LEAVES);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "flowering_azalea"), FLOWERING_AZALEA);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "flowering_azalea_leaves"), FLOWERING_AZALEA_LEAVES);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_azalea_bush"), POTTED_AZALEA_BUSH);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "potted_flowering_azalea_bush"), POTTED_FLOWERING_AZALEA_BUSH);
+        Registry.register(Registry.BLOCK, new Identifier(AnaesiaMod.MINECRAFT_ID, "tinted_glass"), TINTED_GLASS);
 
+
+        addFlammables();
+    }
+    private static LeavesBlock createLeavesBlock() {
+        return new LeavesBlock(AbstractBlock.Settings.of(Material.LEAVES).strength(0.2F)
+                .ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(AnaesiaBlocks::canSpawnOnLeaves)
+                .suffocates(AnaesiaBlocks::never).blockVision(AnaesiaBlocks::never));
+    }
+
+    private static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {return false;}
+    private static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos, EntityType<?> entityType) {return false;}
+    //private static Boolean always(BlockState blockState, BlockView blockView, BlockPos blockPos) {return true;}
+
+    private static Boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+        return type == EntityType.OCELOT || type == EntityType.PARROT;
+    }
+
+
+    private static void addFlammables() {
+        FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
+        flammableRegistry.add(AZALEA_LEAVES, 30, 60);
+        flammableRegistry.add(FLOWERING_AZALEA_LEAVES, 30, 60);
     }
 
 }

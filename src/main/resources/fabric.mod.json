@@ -21,6 +21,9 @@
   "entrypoints": {
     "main": [
       "com.klr2003.anaesia.AnaesiaMod"
+    ],
+    "client": [
+      "com.klr2003.anaesia.AnaesiaClientMod"
     ]
   },
   "mixins": [

@@ -8,7 +8,7 @@ public class AnaesiaMod implements ModInitializer {
 
     public static final String MOD_ID = "anaesia";
     public static final String MOD_NAME = "Anaesia";
-    public static final String VERSION = "0.3.1";
+    public static final String VERSION = "0.4.0";
     public static final String MINECRAFT_ID = "minecraft";
 
 
@@ -18,7 +18,9 @@ public class AnaesiaMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ConfigHandler.initConfig();
-        if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled)){new Debug();}
-        AnaesiaRegistry.register();
+        if(ConfigHandler.readConfigBoolean(ConfigList.isDebugModeEnabled))
+            new Debug();
+        if(ConfigHandler.readConfigBoolean(ConfigList.isBackportEnabled))
+            AnaesiaRegistry.register();
     }
 }
