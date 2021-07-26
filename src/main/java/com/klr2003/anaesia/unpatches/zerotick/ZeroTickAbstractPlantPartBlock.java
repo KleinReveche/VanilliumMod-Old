@@ -1,34 +1,30 @@
 package com.klr2003.anaesia.unpatches.zerotick;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.AbstractPlantPartBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
+import java.util.Random;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.GrowingPlantBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Random;
-
-// this abstracts Kelp, TwistingVines and WeepingVines
-@Mixin(AbstractPlantPartBlock.class)
-public abstract class ZeroTickAbstractPlantPartBlock extends AbstractBlock {
-
-    public ZeroTickAbstractPlantPartBlock(Settings settings) {
-        super(settings);
-    }
-
-    @Inject(at = @At("TAIL"), method = "scheduledTick(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V")
-    public void scheduledTick(final BlockState state, final ServerWorld world, final BlockPos pos, final Random random, CallbackInfo info) {
-        if (!state.canPlaceAt(world, pos)) {
-            world.breakBlock(pos, true);
-            return;
-        }
-
-        if(!world.isAir(pos.down())) {
-            this.randomTick(state, world, pos, random);
-        }
-    }
+@Mixin({GrowingPlantBlock.class})
+public abstract class ZeroTickAbstractPlantPartBlock extends BlockBehaviour {
+  public ZeroTickAbstractPlantPartBlock(BlockBehaviour.Properties settings) {
+    super(settings);
+  }
+  
+  @Inject(at = {@At("TAIL")}, method = {"scheduledTick(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V"})
+  public void scheduledTick(BlockState state, ServerLevel world, BlockPos pos, Random random, CallbackInfo info) {
+    if (!state.canSurvive((LevelReader)world, pos)) {
+      world.destroyBlock(pos, true);
+      return;
+    } 
+    if (!world.isEmptyBlock(pos.below()))
+      randomTick(state, world, pos, random); 
+  }
 }

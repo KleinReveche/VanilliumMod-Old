@@ -1,26 +1,30 @@
 package com.klr2003.anaesia.blocks;
 
-import net.minecraft.block.*;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.math.Direction;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.InfestedBlock;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.Property;
 
 public class RotatedInfestedBlock extends InfestedBlock {
-   public RotatedInfestedBlock(Block block, Settings settings) {
-      super(block, settings);
-      this.setDefaultState(this.getDefaultState().with(PillarBlock.AXIS, Direction.Axis.Y));
-   }
-
-   public BlockState rotate(BlockState state, BlockRotation rotation) {
-      return PillarBlock.changeRotation(state, rotation);
-   }
-
-   protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-      builder.add(PillarBlock.AXIS);
-   }
-
-   public BlockState getPlacementState(ItemPlacementContext ctx) {
-      return this.getDefaultState().with(PillarBlock.AXIS, ctx.getSide().getAxis());
-   }
+  public RotatedInfestedBlock(Block block, BlockBehaviour.Properties settings) {
+    super(block, settings);
+    registerDefaultState((BlockState)defaultBlockState().setValue((Property)PillarBlock.AXIS, (Comparable)Direction.Axis.Y));
+  }
+  
+  public BlockState rotate(BlockState state, Rotation rotation) {
+    return PillarBlock.changeRotation(state, rotation);
+  }
+  
+  protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+    builder.add(new Property[] { (Property)PillarBlock.AXIS });
+  }
+  
+  public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+    return (BlockState)defaultBlockState().setValue((Property)PillarBlock.AXIS, (Comparable)ctx.getClickedFace().getAxis());
+  }
 }
