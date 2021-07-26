@@ -1,30 +1,34 @@
 package com.klr2003.anaesia.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Random;
 
-public class MossBlock extends Block implements Fertilizable {
-   public MossBlock(Settings settings) {
-      super(settings);
-   }
+public class MossBlock extends Block implements BonemealableBlock {
+    public MossBlock(Properties properties) {
+        super(properties);
+    }
 
-   public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
-      return world.getBlockState(pos.up()).isAir();
-   }
+    @Override
+    public boolean isValidBonemealTarget(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, boolean bl) {
+        return blockGetter.getBlockState(blockPos.above()).isAir();
+    }
 
-   public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-      return true;
-   }
+    @Override
+    public boolean isBonemealSuccess(Level level, Random random, BlockPos blockPos, BlockState blockState) {
+        return true;
+    }
 
-   public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-      //TODO: Moss Block Growing Feature
-      //Feature.VEGETATION_PATCH.generate(new FeatureContext(world, world.getChunkManager().getChunkGenerator(), random, pos.up(), ConfiguredFeatures.MOSS_PATCH_BONEMEAL.getConfig()));
-   }
+    @Override
+    public void performBonemeal(ServerLevel serverLevel, Random random, BlockPos blockPos, BlockState blockState) {
+        //TODO: Moss Block Growing Feature
+        //Feature.VEGETATION_PATCH.place(new FeaturePlaceContext(serverLevel, serverLevel.getChunkSource().getGenerator(), random, blockPos.above(), Features.MOSS_PATCH_BONEMEAL.config()));
+
+    }
 }

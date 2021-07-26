@@ -1,22 +1,21 @@
 package com.klr2003.anaesia.blocks;
 
-import net.minecraft.block.AbstractGlassBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.AbstractGlassBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class TintedGlassBlock extends AbstractGlassBlock {
-   public TintedGlassBlock(Settings settings) {
-      super(settings);
-   }
+    public TintedGlassBlock(Properties properties) {
+        super(properties);
+    }
 
-   public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
-      return true;
-   }
+    public boolean propagatesSkylightDown(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return true;
+    }
 
-   public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
-      return 255;
-   }
-
+    public int getLightBlock(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return 255;
+    }
 
 }

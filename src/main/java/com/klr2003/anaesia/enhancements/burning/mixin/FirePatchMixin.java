@@ -1,40 +1,37 @@
 package com.klr2003.anaesia.enhancements.burning.mixin;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.world.World;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(LivingEntity.class)
+@Mixin({LivingEntity.class})
 public abstract class FirePatchMixin extends Entity {
-
-    public FirePatchMixin(EntityType<?> type, World world) {
+    public FirePatchMixin(EntityType<?> type, Level world) {
         super(type, world);
     }
 
-    @Shadow public abstract boolean hasStatusEffect(StatusEffect effect);
+    @Shadow
+    public abstract boolean hasEffect(MobEffect paramMobEffect);
 
-    @Inject(method = "onDeath", at = @At("HEAD"))
-    private void onDeath(DamageSource source, CallbackInfo info) {
-        if(source.isFire()) {
-            if(!this.isOnFire()) {
-                this.setOnFireFor(1);
-            }
-        }
+    @Inject(method = {"die"}, at = {@At("HEAD")})
+    private void die(DamageSource source, CallbackInfo info) {
+        if (source.isFire() &&
+                !isOnFire())
+            setSecondsOnFire(1);
     }
 
-    @Inject(method = "baseTick", at = @At("HEAD"))
+    @Inject(method = {"baseTick"}, at = {@At("HEAD")})
     private void baseTick(CallbackInfo info) {
-        if(this.hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
-            this.extinguish();
-        }
+        if (hasEffect(MobEffects.FIRE_RESISTANCE))
+            clearFire();
     }
 }
