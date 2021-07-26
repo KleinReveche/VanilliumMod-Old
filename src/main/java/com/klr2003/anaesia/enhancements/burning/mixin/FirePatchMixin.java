@@ -15,23 +15,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin({LivingEntity.class})
 public abstract class FirePatchMixin extends Entity {
-  public FirePatchMixin(EntityType<?> type, Level world) {
-    super(type, world);
-  }
-  
-  @Shadow
-  public abstract boolean method_6059(MobEffect paramMobEffect);
-  
-  @Inject(method = {"onDeath"}, at = {@At("HEAD")})
-  private void onDeath(DamageSource source, CallbackInfo info) {
-    if (source.isFire() && 
-      !isOnFire())
-      setSecondsOnFire(1); 
-  }
-  
-  @Inject(method = {"baseTick"}, at = {@At("HEAD")})
-  private void baseTick(CallbackInfo info) {
-    if (method_6059(MobEffects.FIRE_RESISTANCE))
-      clearFire(); 
-  }
+    public FirePatchMixin(EntityType<?> type, Level world) {
+        super(type, world);
+    }
+
+    @Shadow
+    public abstract boolean hasEffect(MobEffect paramMobEffect);
+
+    @Inject(method = {"die"}, at = {@At("HEAD")})
+    private void die(DamageSource source, CallbackInfo info) {
+        if (source.isFire() &&
+                !isOnFire())
+            setSecondsOnFire(1);
+    }
+
+    @Inject(method = {"baseTick"}, at = {@At("HEAD")})
+    private void baseTick(CallbackInfo info) {
+        if (hasEffect(MobEffects.FIRE_RESISTANCE))
+            clearFire();
+    }
 }

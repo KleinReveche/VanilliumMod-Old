@@ -5,8 +5,8 @@
   "refmap": "anaesia.refmap.json",
   "plugin": "com.klr2003.anaesia.utils.MixinHandler",
   "mixins": [
-    "ZeroTickAbstractPlantStemBlock",
     "ZeroTickAbstractPlantPartBlock",
+    "ZeroTickAbstractPlantStemBlock",
     "ZeroTickBambooBlock",
     "ZeroTickCactusBlock",
     "ZeroTickChorusFlowerBlock",

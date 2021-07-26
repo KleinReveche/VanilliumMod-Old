@@ -9,8 +9,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin({EntityType.class})
 public class EntityTypeMixin {
-  @Redirect(method = {"isInvalidSpawn(Lnet/minecraft/block/BlockState;)Z"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z", ordinal = 2))
-  private boolean restoreWitherRoseSpawning(BlockState blockState, Block block) {
-    return false;
-  }
+    @Redirect(method = {"isBlockDangerous(Lnet/minecraft/world/level/block/state/BlockState;)Z"},
+            at = @At(value = "INVOKE",
+                    target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z",
+                    ordinal = 2))
+    private boolean restoreWitherRoseSpawning(BlockState blockState, Block block) {
+        return false;
+    }
 }

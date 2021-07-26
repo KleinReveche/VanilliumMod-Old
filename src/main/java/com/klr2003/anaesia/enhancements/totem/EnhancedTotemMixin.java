@@ -18,32 +18,32 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin({LivingEntity.class})
 public abstract class EnhancedTotemMixin {
-  @Inject(method = {"tryUseTotem"}, at = {@At("HEAD")}, cancellable = true)
-  private void tryUseTotem(DamageSource source, CallbackInfoReturnable<Boolean> info) {
-    LivingEntity livingEntity = (LivingEntity)this;
-    if (livingEntity instanceof ServerPlayer) {
-      ServerPlayer player = (ServerPlayer)livingEntity;
-      ItemStack itemStack = null;
-      Inventory inventory = player.inventory;
-      for (int i = 0; i < inventory.getContainerSize(); i++) {
-        ItemStack stack = inventory.getItem(i);
-        if (stack.getItem().equals(Items.TOTEM_OF_UNDYING)) {
-          itemStack = stack;
-          break;
-        } 
-      } 
-      if (itemStack != null) {
-        player.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
-        CriteriaTriggers.USED_TOTEM.trigger(player, itemStack);
-        itemStack.shrink(1);
-        player.setHealth(1.0F);
-        player.removeAllEffects();
-        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 900, 1));
-        player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
-        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 800, 1));
-        player.level.broadcastEntityEvent((Entity)player, (byte)35);
-        info.setReturnValue(Boolean.valueOf(true));
-      } 
-    } 
-  }
+    @Inject(method = {"checkTotemDeathProtection"}, at = {@At("HEAD")}, cancellable = true)
+    private void checkTotemDeathProtection(DamageSource source, CallbackInfoReturnable<Boolean> info) {
+        LivingEntity livingEntity = ((LivingEntity)(Object)this);
+        if (livingEntity instanceof ServerPlayer) {
+            ServerPlayer player = (ServerPlayer) livingEntity;
+            ItemStack itemStack = null;
+            Inventory inventory = player.inventory;
+            for (int i = 0; i < inventory.getContainerSize(); i++) {
+                ItemStack stack = inventory.getItem(i);
+                if (stack.getItem().equals(Items.TOTEM_OF_UNDYING)) {
+                    itemStack = stack;
+                    break;
+                }
+            }
+            if (itemStack != null) {
+                player.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
+                CriteriaTriggers.USED_TOTEM.trigger(player, itemStack);
+                itemStack.shrink(1);
+                player.setHealth(1.0F);
+                player.removeAllEffects();
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 900, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 800, 1));
+                player.level.broadcastEntityEvent(player, (byte) 35);
+                info.setReturnValue(true);
+            }
+        }
+    }
 }

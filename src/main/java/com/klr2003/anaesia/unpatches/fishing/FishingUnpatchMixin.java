@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin({FishingHook.class})
 public class FishingUnpatchMixin {
-  @Inject(method = {"isOpenOrWaterAround"}, cancellable = true, at = {@At("RETURN")})
-  private void isOpenOrWaterAround(BlockPos pos, CallbackInfoReturnable<Boolean> info) {
-    info.setReturnValue(Boolean.valueOf(true));
-  }
+    @Inject(method = {"calculateOpenWater"}, cancellable = true, at = {@At("RETURN")})
+    private void calculateOpenWater(BlockPos pos, CallbackInfoReturnable<Boolean> info) {
+        info.setReturnValue(true);
+    }
 }
