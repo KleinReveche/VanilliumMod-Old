@@ -60,6 +60,11 @@ public class MixinHandler implements IMixinConfigPlugin {
             MessageHandler.infoMessage("Monsters Beware! preparing the Ultimate Damage..");
             return true;
         }
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.merchant.MerchantOfferMixin") &&
+                ConfigHandler.readConfigBoolean(ConfigList.isInfiniteVillagerTradingEnabled)) {
+            MessageHandler.infoMessage("Enhancing Villagers' Productivity by 1000%..");
+            return true;
+        }
         if (mixinClassName.equals("com.klr2003.anaesia.enhancements.ice.EnhancedIceMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isEnhancedIceEnabled)) {
             MessageHandler.infoMessage("Enhancing your Icy Experience..");

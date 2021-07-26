@@ -15,7 +15,8 @@ public class ConfigList {
     public static String isWitherRosesUnpatchEnabled = "Wither-Roses-Unpatch";
     public static String isZeroTickUnpatchEnabled = "Zero-Tick-Unpatch";
     public static String isInfinityPatchEnabled = "Infinity-Mending-Patch";
-    public static String isDamageEnchantsPatchEnabled = "Damage-Enchantments-Patch-Enabled";
+    public static String isDamageEnchantsPatchEnabled = "Damage-Enchantments-Patch";
+    public static String isInfiniteVillagerTradingEnabled = "Infinite-Villager-Trading";
     public static String isBackportEnabled = "1.17-Backport";
     public static String isDebugModeEnabled = "Debug-Mode";
     public static String configFileVersion = "Config-File-Version";

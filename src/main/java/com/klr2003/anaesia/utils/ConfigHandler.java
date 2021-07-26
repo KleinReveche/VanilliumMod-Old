@@ -30,6 +30,7 @@ public class ConfigHandler {
                     config.put(ConfigList.configFileVersion, "1");
                     config.put(ConfigList.isInfinityPatchEnabled, "false");
                     config.put(ConfigList.isDamageEnchantsPatchEnabled, "false");
+                    config.put(ConfigList.isInfiniteVillagerTradingEnabled, "false");
                     config.put(ConfigList.isBackportEnabled, "true");
                     config.store(output, "Anaesia Mod Configuration");
                     output.close();

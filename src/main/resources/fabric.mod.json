@@ -25,6 +25,7 @@
   },
   "mixins": [
     "mixins/patches/slime_patch.mixins.json",
+    "mixins/patches/infinite_trades.mixins.json",
     "mixins/enhancements/fire_patch.mixins.json",
     "mixins/enhancements/enhanced_totem.mixins.json",
     "mixins/enhancements/enhanced_berries.mixins.json",
