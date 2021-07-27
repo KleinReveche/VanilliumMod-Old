@@ -1,4 +1,4 @@
-package com.klr2003.anaesia.enhancements.burning.mixin;
+package com.klr2003.anaesia.enhancements.burning;
 
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;

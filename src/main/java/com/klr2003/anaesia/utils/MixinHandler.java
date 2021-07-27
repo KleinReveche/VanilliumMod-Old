@@ -57,7 +57,7 @@ public class MixinHandler implements IMixinConfigPlugin {
         }
         if (mixinClassName.equals("com.klr2003.anaesia.patches.damage.DamageEnchantmentPatchMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isDamageEnchantsPatchEnabled)) {
-            MessageHandler.infoMessage("Monsters Beware! preparing the Ultimate Damage..");
+            MessageHandler.infoMessage("Monsters Beware! Preparing the Ultimate Damage..");
             return true;
         }
         if (mixinClassName.equals("com.klr2003.anaesia.patches.merchant.MerchantOfferMixin") &&

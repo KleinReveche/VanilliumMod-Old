@@ -1,4 +1,4 @@
-package com.klr2003.anaesia.enhancements.burning;
+package com.klr2003.anaesia.enhancements.behaviour;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.minecraft.server.level.ServerPlayer;

@@ -1,4 +1,4 @@
-package com.klr2003.anaesia.enhancements.seeds;
+package com.klr2003.anaesia.enhancements.behaviour;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.core.BlockPos;
