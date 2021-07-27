@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "com.klr2003.anaesia.patches",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "anaesia.refmap.json",
+  "plugin": "com.klr2003.anaesia.utils.MixinHandler",
+  "mixins": [
+    "AnvilMenuMixin",
+    "DamageEnchantmentPatchMixin",
+    "EnhancedIceMixin",
+    "EnhancedTotemMixin",
+    "FirePatchMixin",
+    "InfinityPatchMixin",
+    "MerchantOfferMixin",
+    "PlayerMixin",
+    "SlimePatchMixin",
+    "SweetBerryBushBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

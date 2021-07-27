@@ -1,5 +1,6 @@
 package com.klr2003.anaesia.utils;
 
+import com.klr2003.anaesia.AnaesiaMod;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -15,57 +16,62 @@ public class MixinHandler implements IMixinConfigPlugin {
     private boolean initMessage = false;
 
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (mixinClassName.equals("com.klr2003.anaesia.enhancements.totem.EnhancedTotemMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.behaviour.cake.CandleCakeMixin") &&
+                ConfigHandler.readConfigBoolean(ConfigList.isBackportEnabled)) {
+            MessageHandler.infoMessage("Sweetifying the Cake Experience with Candles..");
+            return true;
+        }
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.EnhancedTotemMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isEnhancedTotemEnabled)) {
             MessageHandler.infoMessage("Enhancing the Pillager's Totems of Undying..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.enhancements.berries.SweetBerryBushBlockMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.SweetBerryBushBlockMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isEnhancedBerriesEnabled)) {
             MessageHandler.infoMessage("Fertilizing the Local Berries..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.enhancements.burning.mixin.FirePatchMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.FirePatchMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isEnhancedBurningEnabled)) {
             MessageHandler.infoMessage("Making Mobs fear your Flint 'n Steel..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.unpatches.protection.ProtectionUnpatchMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.unpatches.ProtectionUnpatchMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isProtectionUnpatchEnabled)) {
             MessageHandler.infoMessage("Removing Protection Restrictions..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.unpatches.fishing.FishingUnpatchMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.unpatches.FishingUnpatchMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isFishingUnpatchEnabled)) {
             MessageHandler.infoMessage("Returning Fishing to its old roots..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.unpatches.witherrose.EntityTypeMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.unpatches.EntityTypeMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isWitherRosesUnpatchEnabled)) {
             MessageHandler.infoMessage("Reinvigorating Wither Roses..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.patches.slime.SlimePatchMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.SlimePatchMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isSlimeSuperFlatPatchEnabled)) {
             MessageHandler.infoMessage("Removing Slimes from Flat Worlds..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.patches.infinity.InfinityPatchMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.InfinityPatchMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isInfinityPatchEnabled)) {
             MessageHandler.infoMessage("Allowing Bows with Infinity and Mending..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.patches.damage.DamageEnchantmentPatchMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.DamageEnchantmentPatchMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isDamageEnchantsPatchEnabled)) {
             MessageHandler.infoMessage("Monsters Beware! Preparing the Ultimate Damage..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.patches.merchant.MerchantOfferMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.MerchantOfferMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isInfiniteVillagerTradingEnabled)) {
             MessageHandler.infoMessage("Enhancing Villagers' Productivity by 1000%..");
             return true;
         }
-        if (mixinClassName.equals("com.klr2003.anaesia.enhancements.ice.EnhancedIceMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.patches.EnhancedIceMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isEnhancedIceEnabled)) {
             MessageHandler.infoMessage("Enhancing your Icy Experience..");
             return true;
@@ -76,16 +82,16 @@ public class MixinHandler implements IMixinConfigPlugin {
                 this.sentZeroTickMessage = true;
                 MessageHandler.infoMessage("Reintroducing the Zero Tick Bug..");
             }
-            if (mixinClassName.equals("com.klr2003.anaesia.unpatches.zerotick.ZeroTickAbstractPlantPartBlock"))
+            if (mixinClassName.equals("com.klr2003.anaesia.unpatches.ZeroTickAbstractPlantPartBlock"))
                 return true;
-            return mixinClassName.equals("com.klr2003.anaesia.unpatches.zerotick.ZeroTickAbstractPlantStemBlock");
+            return mixinClassName.equals("com.klr2003.anaesia.unpatches.ZeroTickAbstractPlantStemBlock");
         }
         return false;
     }
 
     public void onLoad(String mixinPackage) {
         if (!this.initMessage) {
-            MessageHandler.infoMessage("Starting Anaesia Mod v0.4.0");
+            MessageHandler.infoMessage("Starting Anaesia Mod " + AnaesiaMod.VERSION);
             this.initMessage = true;
         }
         if (!this.initConfig) {

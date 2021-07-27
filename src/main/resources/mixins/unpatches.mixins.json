@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "package": "com.klr2003.anaesia.unpatches",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "anaesia.refmap.json",
+  "plugin": "com.klr2003.anaesia.utils.MixinHandler",
+  "mixins": [
+    "EntityTypeMixin",
+    "FishingUnpatchMixin",
+    "ProtectionUnpatchMixin",
+    "ZeroTickAbstractPlantPartBlock",
+    "ZeroTickAbstractPlantStemBlock",
+    "ZeroTickBambooBlock",
+    "ZeroTickCactusBlock",
+    "ZeroTickChorusFlowerBlock",
+    "ZeroTickSugarCaneBlock"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

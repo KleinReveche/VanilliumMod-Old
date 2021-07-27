@@ -17,6 +17,7 @@ public class AnaesiaItems {
 
     private static final Item RAW_IRON_BLOCK = new BlockItem(AnaesiaBlocks.RAW_IRON_BLOCK, (new FabricItemSettings()).group(CreativeModeTab.TAB_BUILDING_BLOCKS));
     private static final Item RAW_GOLD_BLOCK = new BlockItem(AnaesiaBlocks.RAW_GOLD_BLOCK, (new FabricItemSettings()).group(CreativeModeTab.TAB_BUILDING_BLOCKS));
+    private static final Item RAW_COPPER_BLOCK = new BlockItem(AnaesiaBlocks.RAW_COPPER_BLOCK, (new FabricItemSettings()).group(CreativeModeTab.TAB_BUILDING_BLOCKS));
     private static final Item SMOOTH_BASALT = new BlockItem(AnaesiaBlocks.SMOOTH_BASALT, (new FabricItemSettings()).group(CreativeModeTab.TAB_BUILDING_BLOCKS));
     private static final Item TUFF = new BlockItem(AnaesiaBlocks.TUFF, (new FabricItemSettings()).group(CreativeModeTab.TAB_BUILDING_BLOCKS));
     private static final Item CALCITE = new BlockItem(AnaesiaBlocks.CALCITE, (new FabricItemSettings()).group(CreativeModeTab.TAB_BUILDING_BLOCKS));
@@ -100,6 +101,7 @@ public class AnaesiaItems {
     public static void registerItemsFromBlock() {
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "raw_iron_block"), RAW_IRON_BLOCK);
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "raw_gold_block"), RAW_GOLD_BLOCK);
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "raw_copper_block"), RAW_COPPER_BLOCK);
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "smooth_basalt"), SMOOTH_BASALT);
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "tuff"), TUFF);
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "calcite"), CALCITE);
@@ -171,5 +173,23 @@ public class AnaesiaItems {
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "flowering_azalea"), FLOWERING_AZALEA);
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "flowering_azalea_leaves"), FLOWERING_AZALEA_LEAVES);
         Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "tinted_glass"), TINTED_GLASS);
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "candle"), new BlockItem(AnaesiaBlocks.CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "white_candle"), new BlockItem(AnaesiaBlocks.WHITE_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "orange_candle"), new BlockItem(AnaesiaBlocks.ORANGE_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "magenta_candle"), new BlockItem(AnaesiaBlocks.MAGENTA_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "light_blue_candle"), new BlockItem(AnaesiaBlocks.LIGHT_BLUE_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "yellow_candle"), new BlockItem(AnaesiaBlocks.YELLOW_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "lime_candle"), new BlockItem(AnaesiaBlocks.LIME_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "pink_candle"), new BlockItem(AnaesiaBlocks.PINK_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "gray_candle"), new BlockItem(AnaesiaBlocks.GRAY_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "light_gray_candle"), new BlockItem(AnaesiaBlocks.LIGHT_GRAY_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "cyan_candle"), new BlockItem(AnaesiaBlocks.CYAN_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "purple_candle"), new BlockItem(AnaesiaBlocks.PURPLE_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "blue_candle"), new BlockItem(AnaesiaBlocks.BLUE_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "brown_candle"), new BlockItem(AnaesiaBlocks.BROWN_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "green_candle"), new BlockItem(AnaesiaBlocks.GREEN_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "red_candle"), new BlockItem(AnaesiaBlocks.RED_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+        Registry.register(Registry.ITEM, new ResourceLocation("minecraft", "black_candle"), new BlockItem(AnaesiaBlocks.BLACK_CANDLE, (new FabricItemSettings()).group(CreativeModeTab.TAB_DECORATIONS)));
+
     }
 }

@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.klr2003.anaesia.behaviour.cake",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "anaesia.refmap.json",
+  "plugin": "com.klr2003.anaesia.utils.MixinHandler",
+  "mixins": [
+    "CandleCakeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

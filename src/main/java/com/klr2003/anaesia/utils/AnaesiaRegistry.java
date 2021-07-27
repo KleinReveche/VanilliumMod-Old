@@ -1,11 +1,11 @@
 package com.klr2003.anaesia.utils;
 
 import com.klr2003.anaesia.blocks.AnaesiaBlocks;
-import com.klr2003.anaesia.enhancements.behaviour.EnhancedBoneMeal;
-import com.klr2003.anaesia.enhancements.behaviour.EnhancedBoneMealDispenserBehaviour;
-import com.klr2003.anaesia.enhancements.behaviour.EnhancedKelp;
-import com.klr2003.anaesia.enhancements.behaviour.EnhancedSeeds;
-import com.klr2003.anaesia.enhancements.behaviour.EnhancedSeedsDispenserBehaviour;
+import com.klr2003.anaesia.behaviour.EnhancedBoneMeal;
+import com.klr2003.anaesia.behaviour.EnhancedBoneMealDispenserBehaviour;
+import com.klr2003.anaesia.behaviour.EnhancedKelp;
+import com.klr2003.anaesia.behaviour.EnhancedSeeds;
+import com.klr2003.anaesia.behaviour.EnhancedSeedsDispenserBehaviour;
 import com.klr2003.anaesia.items.AnaesiaItems;
 
 public class AnaesiaRegistry {

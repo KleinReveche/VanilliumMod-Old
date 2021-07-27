@@ -10,13 +10,17 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+
+import java.util.function.ToIntFunction;
 
 public class AnaesiaBlocks {
 
     public static final Block RAW_IRON_BLOCK = new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_CYAN).requiresCorrectToolForDrops().strength(5.0F, 6.0F));
     public static final Block RAW_GOLD_BLOCK = new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.GOLD).requiresCorrectToolForDrops().strength(5.0F, 6.0F));
+    public static final Block RAW_COPPER_BLOCK = new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(5.0F, 6.0F));
 
     public static final Block SMOOTH_BASALT = new Block(BlockBehaviour.Properties.copy(Blocks.BASALT));
     public static final Block TUFF = new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_GRAY).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.5F, 6.0F));
@@ -115,10 +119,47 @@ public class AnaesiaBlocks {
     public static final Block POTTED_FLOWERING_AZALEA_BUSH = new FlowerPotBlock(FLOWERING_AZALEA, BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion());
     public static final Block TINTED_GLASS = new TintedGlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion().isValidSpawn(AnaesiaBlocks::never).isRedstoneConductor(AnaesiaBlocks::never).isSuffocating(AnaesiaBlocks::never).isViewBlocking(AnaesiaBlocks::never));
 
+    public static final Block CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, MaterialColor.TERRACOTTA_WHITE).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block WHITE_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.WHITE).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block ORANGE_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.ORANGE).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block MAGENTA_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.MAGENTA).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block LIGHT_BLUE_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.LIGHT_BLUE).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block YELLOW_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.YELLOW).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block LIME_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.LIME).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block PINK_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.PINK).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block GRAY_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.GRAY).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block LIGHT_GRAY_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.LIGHT_GRAY).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block CYAN_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.CYAN).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block PURPLE_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.PURPLE).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block BLUE_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.BLUE).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block BROWN_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.BROWN).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block GREEN_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.GREEN).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block RED_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.RED).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+    public static final Block BLACK_CANDLE = new CandleBlock(BlockBehaviour.Properties.of(Material.CAKE, DyeColor.BLACK).noOcclusion().strength(0.1F).sound(SoundType.WART_BLOCK).lightLevel(CandleBlock.STATE_TO_LUMINANCE));
+
+    public static final Block CANDLE_CAKE = new CandleCakeBlock(CANDLE, BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(lightLevel(3)));
+    public static final Block WHITE_CANDLE_CAKE = new CandleCakeBlock(WHITE_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block ORANGE_CANDLE_CAKE = new CandleCakeBlock(ORANGE_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block MAGENTA_CANDLE_CAKE = new CandleCakeBlock(MAGENTA_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block LIGHT_BLUE_CANDLE_CAKE = new CandleCakeBlock(LIGHT_BLUE_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block YELLOW_CANDLE_CAKE = new CandleCakeBlock(YELLOW_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block LIME_CANDLE_CAKE = new CandleCakeBlock(LIME_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block PINK_CANDLE_CAKE = new CandleCakeBlock(PINK_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block GRAY_CANDLE_CAKE = new CandleCakeBlock(GRAY_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block LIGHT_GRAY_CANDLE_CAKE = new CandleCakeBlock(LIGHT_GRAY_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block CYAN_CANDLE_CAKE = new CandleCakeBlock(CYAN_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block PURPLE_CANDLE_CAKE = new CandleCakeBlock(PURPLE_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block BLUE_CANDLE_CAKE = new CandleCakeBlock(BLUE_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block BROWN_CANDLE_CAKE = new CandleCakeBlock(BROWN_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block GREEN_CANDLE_CAKE = new CandleCakeBlock(GREEN_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block RED_CANDLE_CAKE = new CandleCakeBlock(RED_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+    public static final Block BLACK_CANDLE_CAKE = new CandleCakeBlock(BLACK_CANDLE, BlockBehaviour.Properties.copy(CANDLE_CAKE));
+
 
     public static void registerBlocks() {
         Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "raw_iron_block"), RAW_IRON_BLOCK);
         Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "raw_gold_block"), RAW_GOLD_BLOCK);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "raw_copper_block"), RAW_COPPER_BLOCK);
 
         Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "smooth_basalt"), SMOOTH_BASALT);
         Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "tuff"), TUFF);
@@ -199,6 +240,41 @@ public class AnaesiaBlocks {
         Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "potted_flowering_azalea_bush"), POTTED_FLOWERING_AZALEA_BUSH);
         Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "tinted_glass"), TINTED_GLASS);
 
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "candle"), CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "white_candle"), WHITE_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "orange_candle"), ORANGE_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "magenta_candle"), MAGENTA_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "light_blue_candle"), LIGHT_BLUE_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "yellow_candle"), YELLOW_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "lime_candle"), LIME_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "pink_candle"), PINK_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "gray_candle"), GRAY_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "light_gray_candle"), LIGHT_GRAY_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "cyan_candle"), CYAN_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "purple_candle"), PURPLE_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "blue_candle"), BLUE_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "brown_candle"), BROWN_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "green_candle"), GREEN_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "red_candle"), RED_CANDLE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "black_candle"), BLACK_CANDLE);
+
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "candle_cake"), CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "white_candle_cake"), WHITE_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "orange_candle_cake"), ORANGE_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "magenta_candle_cake"), MAGENTA_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "light_blue_candle_cake"), LIGHT_BLUE_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "yellow_candle_cake"), YELLOW_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "lime_candle_cake"), LIME_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "pink_candle_cake"), PINK_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "gray_candle_cake"), GRAY_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "light_gray_candle_cake"), LIGHT_GRAY_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "cyan_candle_cake"), CYAN_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "purple_candle_cake"), PURPLE_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "blue_candle_cake"), BLUE_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "brown_candle_cake"), BROWN_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "green_candle_cake"), GREEN_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "red_candle_cake"), RED_CANDLE_CAKE);
+        Registry.register(Registry.BLOCK, new ResourceLocation("minecraft", "black_candle_cake"), BLACK_CANDLE_CAKE);
 
         addFlammables();
     }
@@ -222,11 +298,15 @@ public class AnaesiaBlocks {
         return entityType == EntityType.OCELOT || entityType == EntityType.PARROT;
     }
 
+    private static ToIntFunction<BlockState> lightLevel(int litLevel) {
+        return state -> (state.getValue(BlockStateProperties.LIT)) ? litLevel : 0;
+    }
 
     private static void addFlammables() {
         FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
         flammableRegistry.add(AZALEA_LEAVES, 30, 60);
         flammableRegistry.add(FLOWERING_AZALEA_LEAVES, 30, 60);
     }
+
 
 }
