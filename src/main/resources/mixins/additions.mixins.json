@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.klr2003.anaesia.behaviour.cake",
+  "package": "com.klr2003.anaesia.behaviour.items",
   "compatibilityLevel": "JAVA_8",
   "refmap": "anaesia.refmap.json",
   "plugin": "com.klr2003.anaesia.utils.MixinHandler",

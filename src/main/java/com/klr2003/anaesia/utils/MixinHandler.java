@@ -16,9 +16,14 @@ public class MixinHandler implements IMixinConfigPlugin {
     private boolean initMessage = false;
 
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (mixinClassName.equals("com.klr2003.anaesia.behaviour.cake.CandleCakeMixin") &&
+        if (mixinClassName.equals("com.klr2003.anaesia.behaviour.items.CandleCakeMixin") &&
                 ConfigHandler.readConfigBoolean(ConfigList.isBackportEnabled)) {
             MessageHandler.infoMessage("Sweetifying the Cake Experience with Candles..");
+            return true;
+        }
+        if (mixinClassName.equals("com.klr2003.anaesia.behaviour.items.HoneycombMixin") &&
+                ConfigHandler.readConfigBoolean(ConfigList.isBackportEnabled)) {
+            MessageHandler.infoMessage("Sweetening the Honeycombs..");
             return true;
         }
         if (mixinClassName.equals("com.klr2003.anaesia.patches.EnhancedTotemMixin") &&

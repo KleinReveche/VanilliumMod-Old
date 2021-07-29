@@ -1,7 +1,12 @@
 package com.klr2003.anaesia.utils;
 
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.Property;
+
+import java.util.Iterator;
 
 public class UtilHandler {
 
@@ -17,4 +22,22 @@ public class UtilHandler {
         player.experienceLevel = currentLevel;
         return xpSum;
     }
+
+    public static final BlockState withPropertiesOf(Block block, BlockState blockState) {
+        BlockState blockState2 = block.defaultBlockState();
+        Iterator var3 = blockState.getBlock().getStateDefinition().getProperties().iterator();
+
+        while(var3.hasNext()) {
+            Property<?> property = (Property<?>) var3.next();
+            if (blockState2.hasProperty(property)) {
+                blockState2 = copyProperty(blockState, blockState2, property);
+            }
+        }
+
+        return blockState2;
+    }
+    private static <T extends Comparable<T>> BlockState copyProperty(BlockState blockState, BlockState blockState2, Property<T> property) {
+        return blockState2.setValue(property, blockState.getValue(property));
+    }
+
 }

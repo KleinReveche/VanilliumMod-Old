@@ -59,42 +59,24 @@ public class AnaesiaBlocks {
     public static final Block DEEPSLATE_COPPER_ORE = new OreBlock(BlockBehaviour.Properties.copy(COPPER_ORE).strength(4.5F, 3.0F).sound(SoundType.STONE));
     public static final Block DEEPSLATE_LAPIS_ORE = new OreBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_ORE).strength(4.5F, 3.0F).sound(SoundType.STONE));
     public static final Block DEEPSLATE_REDSTONE_ORE = new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).strength(4.5F, 3.0F).sound(SoundType.STONE));
-
-    /*
-    public static final Block COPPER_BLOCK = new OxidizableBlock(Oxidizable.OxidizationLevel.UNAFFECTED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block EXPOSED_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.EXPOSED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block WEATHERED_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.WEATHERED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.field_25706).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block OXIDIZED_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.OXIDIZED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.field_25705).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block OXIDIZED_CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.OXIDIZED, BlockBehaviour.Properties.copy(OXIDIZED_COPPER));
-    public static final Block WEATHERED_CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.WEATHERED, BlockBehaviour.Properties.copy(WEATHERED_COPPER));
-    public static final Block EXPOSED_CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.EXPOSED, BlockBehaviour.Properties.copy(EXPOSED_COPPER));
-    public static final Block CUT_COPPER = new OxidizableBlock(Oxidizable.OxidizationLevel.UNAFFECTED, BlockBehaviour.Properties.copy(COPPER_BLOCK));
-    public static final Block OXIDIZED_CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.OXIDIZED, OXIDIZED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(OXIDIZED_CUT_COPPER));
-    public static final Block WEATHERED_CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.WEATHERED, WEATHERED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(WEATHERED_COPPER));
-    public static final Block EXPOSED_CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.EXPOSED, EXPOSED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(EXPOSED_COPPER));
-    public static final Block CUT_COPPER_STAIRS = new OxidizableStairsBlock(Oxidizable.OxidizationLevel.UNAFFECTED, CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(COPPER_BLOCK));
-    public static final Block OXIDIZED_CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.OXIDIZED, BlockBehaviour.Properties.copy(OXIDIZED_CUT_COPPER).requiresCorrectToolForDrops());
-    public static final Block WEATHERED_CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.WEATHERED, BlockBehaviour.Properties.copy(WEATHERED_CUT_COPPER).requiresCorrectToolForDrops());
-    public static final Block EXPOSED_CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.EXPOSED, BlockBehaviour.Properties.copy(EXPOSED_CUT_COPPER).requiresCorrectToolForDrops());
-    public static final Block CUT_COPPER_SLAB = new OxidizableSlabBlock(Oxidizable.OxidizationLevel.UNAFFECTED, BlockBehaviour.Properties.copy(CUT_COPPER).requiresCorrectToolForDrops());
-     */
-    public static final Block COPPER_BLOCK = new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block EXPOSED_COPPER = new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block WEATHERED_COPPER = new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block OXIDIZED_COPPER = new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
-    public static final Block OXIDIZED_CUT_COPPER = new Block(BlockBehaviour.Properties.copy(OXIDIZED_COPPER));
-    public static final Block WEATHERED_CUT_COPPER = new Block(BlockBehaviour.Properties.copy(WEATHERED_COPPER));
-    public static final Block EXPOSED_CUT_COPPER = new Block(BlockBehaviour.Properties.copy(EXPOSED_COPPER));
-    public static final Block CUT_COPPER = new Block(BlockBehaviour.Properties.copy(COPPER_BLOCK));
-    public static final Block OXIDIZED_CUT_COPPER_STAIRS = new StairBlock(OXIDIZED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(OXIDIZED_CUT_COPPER));
-    public static final Block WEATHERED_CUT_COPPER_STAIRS = new StairBlock(WEATHERED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(WEATHERED_COPPER));
-    public static final Block EXPOSED_CUT_COPPER_STAIRS = new StairBlock(EXPOSED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(EXPOSED_COPPER));
-    public static final Block CUT_COPPER_STAIRS = new StairBlock(CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(COPPER_BLOCK));
-    public static final Block OXIDIZED_CUT_COPPER_SLAB = new SlabBlock(BlockBehaviour.Properties.copy(OXIDIZED_CUT_COPPER).requiresCorrectToolForDrops());
-    public static final Block WEATHERED_CUT_COPPER_SLAB = new SlabBlock(BlockBehaviour.Properties.copy(WEATHERED_CUT_COPPER).requiresCorrectToolForDrops());
-    public static final Block EXPOSED_CUT_COPPER_SLAB = new SlabBlock(BlockBehaviour.Properties.copy(EXPOSED_CUT_COPPER).requiresCorrectToolForDrops());
-    public static final Block CUT_COPPER_SLAB = new SlabBlock(BlockBehaviour.Properties.copy(CUT_COPPER).requiresCorrectToolForDrops());
-
+    
+    public static final Block COPPER_BLOCK = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
+    public static final Block EXPOSED_COPPER = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.EXPOSED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
+    public static final Block WEATHERED_COPPER = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_STEM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
+    public static final Block OXIDIZED_COPPER = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.OXIDIZED, BlockBehaviour.Properties.of(Material.METAL, MaterialColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL));
+    public static final Block OXIDIZED_CUT_COPPER = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(OXIDIZED_COPPER));
+    public static final Block WEATHERED_CUT_COPPER = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.copy(WEATHERED_COPPER));
+    public static final Block EXPOSED_CUT_COPPER = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.EXPOSED, BlockBehaviour.Properties.copy(EXPOSED_COPPER));
+    public static final Block CUT_COPPER = new WeatheringCopperFullBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(COPPER_BLOCK));
+    public static final Block OXIDIZED_CUT_COPPER_STAIRS = new WeatheringCopperStairBlock(WeatheringCopper.WeatherState.OXIDIZED, OXIDIZED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(OXIDIZED_CUT_COPPER));
+    public static final Block WEATHERED_CUT_COPPER_STAIRS = new WeatheringCopperStairBlock(WeatheringCopper.WeatherState.WEATHERED, WEATHERED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(WEATHERED_COPPER));
+    public static final Block EXPOSED_CUT_COPPER_STAIRS = new WeatheringCopperStairBlock(WeatheringCopper.WeatherState.EXPOSED, EXPOSED_CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(EXPOSED_COPPER));
+    public static final Block CUT_COPPER_STAIRS = new WeatheringCopperStairBlock(WeatheringCopper.WeatherState.UNAFFECTED, CUT_COPPER.defaultBlockState(), BlockBehaviour.Properties.copy(COPPER_BLOCK));
+    public static final Block OXIDIZED_CUT_COPPER_SLAB = new WeatheringCopperSlabBlock(WeatheringCopper.WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(OXIDIZED_CUT_COPPER).requiresCorrectToolForDrops());
+    public static final Block WEATHERED_CUT_COPPER_SLAB = new WeatheringCopperSlabBlock(WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.copy(WEATHERED_CUT_COPPER).requiresCorrectToolForDrops());
+    public static final Block EXPOSED_CUT_COPPER_SLAB = new WeatheringCopperSlabBlock(WeatheringCopper.WeatherState.EXPOSED, BlockBehaviour.Properties.copy(EXPOSED_CUT_COPPER).requiresCorrectToolForDrops());
+    public static final Block CUT_COPPER_SLAB = new WeatheringCopperSlabBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(CUT_COPPER).requiresCorrectToolForDrops());
+    
     public static final Block WAXED_COPPER_BLOCK = new Block(BlockBehaviour.Properties.copy(COPPER_BLOCK));
     public static final Block WAXED_WEATHERED_COPPER = new Block(BlockBehaviour.Properties.copy(WEATHERED_COPPER));
     public static final Block WAXED_EXPOSED_COPPER = new Block(BlockBehaviour.Properties.copy(EXPOSED_COPPER));

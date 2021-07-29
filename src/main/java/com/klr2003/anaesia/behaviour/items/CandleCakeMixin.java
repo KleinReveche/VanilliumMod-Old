@@ -1,4 +1,4 @@
-package com.klr2003.anaesia.behaviour.cake;
+package com.klr2003.anaesia.behaviour.items;
 
 import com.klr2003.anaesia.blocks.CandleCakeBlock;
 import net.minecraft.core.BlockPos;
