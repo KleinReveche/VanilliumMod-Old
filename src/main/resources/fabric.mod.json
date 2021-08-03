@@ -17,10 +17,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.klr2003.anaesia.AnaesiaMod"
+      "com.klr2003.vanillium.VanilliumMod"
     ],
     "client": [
-      "com.klr2003.anaesia.AnaesiaClientMod"
+      "com.klr2003.vanillium.VanilliumClientMod"
     ]
   },
   "mixins": [

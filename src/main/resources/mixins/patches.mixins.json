@@ -1,9 +1,9 @@
 {
   "required": true,
-  "package": "com.klr2003.anaesia.patches",
+  "package": "com.klr2003.vanillium.patches",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "anaesia.refmap.json",
-  "plugin": "com.klr2003.anaesia.utils.MixinHandler",
+  "refmap": "vanillium.refmap.json",
+  "plugin": "com.klr2003.vanillium.utils.MixinHandler",
   "mixins": [
     "AnvilMenuMixin",
     "DamageEnchantmentPatchMixin",

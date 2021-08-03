@@ -1,9 +1,9 @@
 {
   "required": true,
-  "package": "com.klr2003.anaesia.behaviour.items",
+  "package": "com.klr2003.vanillium.behaviour.items",
   "compatibilityLevel": "JAVA_8",
   "refmap": "anaesia.refmap.json",
-  "plugin": "com.klr2003.anaesia.utils.MixinHandler",
+  "plugin": "com.klr2003.vanillium.utils.MixinHandler",
   "mixins": [
     "CandleCakeMixin"
   ],

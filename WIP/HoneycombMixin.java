@@ -1,6 +1,6 @@
-package com.klr2003.anaesia.behaviour.items;
+package com.klr2003.vanillium.behaviour.items;
 
-import com.klr2003.anaesia.items.HoneycombItem;
+import com.klr2003.vanillium.items.HoneycombItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
